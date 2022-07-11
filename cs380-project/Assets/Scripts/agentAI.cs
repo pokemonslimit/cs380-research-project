@@ -29,13 +29,15 @@ public class agentAI : MonoBehaviour
     private void ConstructBehahaviourTree()
     {
         //Leaf create
+        Roaming roamingNode = new Roaming(agent,this);
         InRange rangeDetectNode = new InRange(_chasingRange, _target, transform);
         ChaseTarget chaseNode = new ChaseTarget(_target, agent, this);
         //Decorator
         Inverter invertNode = new Inverter( rangeDetectNode);
+        Inverter invertNode2 = new Inverter( roamingNode);
 
         //Root
-        topNode = new Selector(new List<Node> {invertNode, chaseNode});
+        topNode = new Selector(new List<Node> {invertNode2, invertNode, chaseNode});
     }
 
     private void Update()
