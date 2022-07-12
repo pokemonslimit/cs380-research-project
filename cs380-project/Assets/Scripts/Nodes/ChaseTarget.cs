@@ -19,7 +19,7 @@ public class ChaseTarget : Node
     public override NodeState Evaluate()
     {
         //debug drawing
-        ai.SetColor(Color.red);
+        //ai.SetColor(Color.yellow);
         
         float distance = Vector3.Distance(target.position, agent.transform.position);
         if(distance > 0.2f)
@@ -35,5 +35,11 @@ public class ChaseTarget : Node
         }
     }
 
-   
+    // Does nothing for now,
+    // maybe calc based on hunger or something?
+    public override void CalcUtility()
+    {
+    
+    }
+
 }

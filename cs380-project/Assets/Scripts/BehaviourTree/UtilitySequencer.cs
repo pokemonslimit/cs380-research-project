@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sequencer : Node
+public class UtilitySequencer : Node
 {
     protected List<Node> nodes = new List<Node>();
 
-    public Sequencer(List<Node> nodes)
+    public UtilitySequencer(List<Node> nodes)
     {
         this.nodes = nodes;
     }
@@ -33,8 +33,25 @@ public class Sequencer : Node
         return _nodeState;
     }
 
+    // Sorts the children nodes based on Utility for Selector/Sequencers
+    // Sorts highest to lowest
+    // Sets own utility == to highest utility in child nodes,
+    // Not sure that's the best thing to do, but good enough to get it working
     public override void CalcUtility()
     {
-    }
+        foreach (Node node in nodes)
+            node.CalcUtility();
 
+        nodes.Sort(delegate (Node x, Node y)
+        {
+            if (x.UtilityScore > y.UtilityScore)
+                return -1;
+            else if (x.UtilityScore < y.UtilityScore)
+                return 1;
+            else
+                return 0;
+        });
+
+        UtilityScore = nodes[0].UtilityScore;
+    }
 }

@@ -27,4 +27,11 @@ public class InRange : Node
             return NodeState.FAILURE;
         }
     }
+
+    // Just gonna leave it to do nothing with utility for now,
+    // Maybe it'd be cool to make utility based on distance?
+    public override void CalcUtility()
+    {     
+    }
+
 }

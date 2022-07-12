@@ -29,4 +29,12 @@ public class AlwaysFailure : Node
 		}
 		return _nodeState;
 	}
+	// Calc child node's Utility for decorators
+	// Maybe some decorators can then alter Utility further?
+	// Or could make a decorator that always has some specific score?
+	public override void CalcUtility()
+	{
+		node.CalcUtility();
+		UtilityScore = node.UtilityScore;
+	}
 }

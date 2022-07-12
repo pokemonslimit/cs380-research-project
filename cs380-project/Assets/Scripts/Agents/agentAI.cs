@@ -11,9 +11,10 @@ public class agentAI : MonoBehaviour
   
     [SerializeField] private Transform _target;
 
-    private Material material;
-    private NavMeshAgent agent;
-    private Node topNode;
+    protected Material material;
+    protected NavMeshAgent agent;
+    protected Node topNode;
+    protected List<Tuple<string, float>> utilityBlackboard = new List<Tuple<string, float>>();
 
     private void Awake()
     {
@@ -23,10 +24,18 @@ public class agentAI : MonoBehaviour
 
     private void Start()
     {
+        ConstructBlackBoard();
         ConstructBehahaviourTree();
     }
 
-    private void ConstructBehahaviourTree()
+    public virtual void ConstructBlackBoard()
+    {
+        // Just random stuff for testing
+        utilityBlackboard.Add(new Tuple<string, float>("Healh", 55.0f));
+        utilityBlackboard.Add(new Tuple<string, float>("Energy", 23.0f));
+    }
+
+    public virtual void ConstructBehahaviourTree()
     {
         //Leaf create
         Roaming roamingNode = new Roaming(agent,this);
@@ -40,10 +49,11 @@ public class agentAI : MonoBehaviour
         topNode = new Selector(new List<Node> {invertNode2, invertNode, chaseNode});
     }
 
-    private void Update()
-    {
+    public virtual void Update()
+    { 
+        topNode.CalcUtility();
         topNode.Evaluate();
-        if(topNode.nodeState == NodeState.FAILURE)
+        if (topNode.nodeState == NodeState.FAILURE)
         {
             agent.isStopped = true;
         }

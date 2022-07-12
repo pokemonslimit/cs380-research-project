@@ -42,4 +42,8 @@ public class Roaming : Node
          }
          return finalPosition;
      }
+
+    public override void CalcUtility()
+    {
+    }
 }
