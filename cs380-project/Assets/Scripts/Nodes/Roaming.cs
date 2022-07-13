@@ -7,22 +7,23 @@ public class Roaming : Node
 {
     private NavMeshAgent agent;
     private agentAI ai;
-
-    public Roaming(NavMeshAgent agent, agentAI ai)
+    private float range;
+    public Roaming(NavMeshAgent agent, agentAI ai,float range)
     {
         this.agent = agent;
         this.ai = ai;
+        this.range = range;
     }
 
     public override NodeState Evaluate()
     {
         //debug drawing
         ai.SetColor(Color.yellow);
-        float distance = Vector3.Distance(RandomLocation(4.0f), agent.transform.position);
+        float distance = Vector3.Distance(RandomLocation(range), agent.transform.position);
         if(distance > 0.2f)
         {
             agent.isStopped = false;
-            agent.SetDestination(RandomLocation(4.0f));
+            agent.SetDestination(RandomLocation(range));
             return NodeState.RUNNING;
         }
         else
@@ -45,5 +46,6 @@ public class Roaming : Node
 
     public override void CalcUtility()
     {
+        UtilityScore = 0.2f;
     }
 }
