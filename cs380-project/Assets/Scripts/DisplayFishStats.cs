@@ -49,8 +49,9 @@ public class DisplayFishStats : MonoBehaviour
                 index = keys.Count - 1;
         }
         
+        // Because I always forget how this works 
         //https://docs.unity3d.com/ScriptReference/RaycastHit-point.html
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit objectHit;
