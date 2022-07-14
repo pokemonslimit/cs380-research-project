@@ -18,7 +18,7 @@ public class Idle : Node
     {
         //debug drawing
             agent.isStopped = true;
-        ai.utilityBlackboard["Mood"] += 0.1f;
+        ai.utilityBlackboard["Mood"] += 0.01f;
         return NodeState.SUCCESS;
     }
 

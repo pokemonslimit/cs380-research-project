@@ -29,7 +29,7 @@ public class Roaming : Node
         else
         {
             agent.isStopped = true;
-            ai.utilityBlackboard["Mood"] -= 0.1f;
+            ai.utilityBlackboard["Mood"] -= 0.001f;
             return NodeState.SUCCESS;
         }
     }
