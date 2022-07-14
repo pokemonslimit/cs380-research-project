@@ -5,13 +5,16 @@ using UnityEngine;
 public class UtilitySequencer : Node
 {
     protected List<Node> nodes = new List<Node>();
-
-    public UtilitySequencer(List<Node> nodes)
+    private agentAI ai;
+    public UtilitySequencer(List<Node> nodes, agentAI ai)
     {
+        name = "Utility Sequencer";
+        this.ai = ai;
         this.nodes = nodes;
     }
     public override NodeState Evaluate()
     {
+        ai.currentNode = this;
         bool isAnyNodeRunning = false;
         foreach (var node in nodes)
         {

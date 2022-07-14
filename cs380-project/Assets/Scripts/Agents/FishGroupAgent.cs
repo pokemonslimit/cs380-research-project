@@ -17,7 +17,7 @@ public class FishGroupAgent : agentAI
         SearchForFood searchforfood = new SearchForFood(agent,this,food);
         FleeFromTarget fleefromtarger = new FleeFromTarget(predator.transform, agent, this, predatorDetectRange);
         //Root
-        topNode = new UtilitySelector(new List<Node>{ roaming, searchforfood, fleefromtarger });
+        topNode = new UtilitySelector(new List<Node>{ roaming, searchforfood, fleefromtarger }, this);
 
     }
     public override void ConstructBlackBoard()

@@ -10,6 +10,7 @@ public class Roaming : Node
     private float range;
     public Roaming(NavMeshAgent agent, agentAI ai,float range)
     {
+        name = "Roaming";
         this.agent = agent;
         this.ai = ai;
         this.range = range;
@@ -19,6 +20,7 @@ public class Roaming : Node
     {
         //debug drawing
         ai.SetColor(Color.yellow);
+        ai.currentNode = this;
         float distance = Vector3.Distance(RandomLocation(range), agent.transform.position);
         if(distance > 0.2f)
         {

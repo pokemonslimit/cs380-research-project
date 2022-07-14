@@ -12,6 +12,7 @@ public class FleeFromTarget : Node
 
     public FleeFromTarget(Transform target, NavMeshAgent agent, agentAI ai, float targetdistance)
     {
+        name = "Flee From Target";
         this.target = target;
         this.agent = agent;
         this.ai = ai;
@@ -22,7 +23,7 @@ public class FleeFromTarget : Node
     {
         //debug drawing
         //ai.SetColor(Color.yellow);
-        
+        ai.currentNode = this;
         float distance = Vector3.Distance(target.position, agent.transform.position);
         if(distance < targetdistance)
         {
