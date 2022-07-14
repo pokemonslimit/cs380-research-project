@@ -31,6 +31,7 @@ public class Roaming : Node
         else
         {
             agent.isStopped = true;
+            ai.utilityBlackboard["Mood"] -= 0.1f;
             return NodeState.SUCCESS;
         }
     }
@@ -48,6 +49,7 @@ public class Roaming : Node
 
     public override void CalcUtility()
     {
-        UtilityScore = 0.2f;
+        float x = ai.utilityBlackboard["Mood"];
+        UtilityScore = x / 100.0f;
     }
 }
