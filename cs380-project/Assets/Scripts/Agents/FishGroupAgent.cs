@@ -13,11 +13,12 @@ public class FishGroupAgent : agentAI
     public override void ConstructBehahaviourTree()
     {
         //Leaf
+        Idle idle = new Idle(agent, this);
         Roaming roaming = new Roaming(agent, this, roamingRange);
         SearchForFood searchforfood = new SearchForFood(agent,this,food);
         FleeFromTarget fleefromtarger = new FleeFromTarget(predator.transform, agent, this, predatorDetectRange);
         //Root
-        topNode = new UtilitySelector(new List<Node>{ roaming, searchforfood, fleefromtarger });
+        topNode = new UtilitySelector(new List<Node>{idle, roaming, searchforfood, fleefromtarger });
 
     }
     public override void ConstructBlackBoard()
@@ -38,8 +39,9 @@ public class FishGroupAgent : agentAI
         // relative behaviors: 
         //search for food
 
+        utilityBlackboard.Add("Mood", 0.0f);
 
-        utilityBlackboard.Add("Fear", 0);
+        utilityBlackboard.Add("Fear", 0.0f);
         // relative behaviors:
         // flee
 
