@@ -10,8 +10,9 @@ public class agentAI : MonoBehaviour
     protected Material material;
     protected NavMeshAgent agent;
     protected Node topNode;
-    //protected List<Tuple<string, float>> utilityBlackboard = new List<Tuple<string, float>>();
+    
     public Dictionary<string, float> utilityBlackboard = new Dictionary<string, float>();
+    public Node currentNode; //Keep track of current node for UI
 
     private void Awake()
     {

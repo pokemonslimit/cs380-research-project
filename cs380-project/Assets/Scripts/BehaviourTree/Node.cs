@@ -6,9 +6,10 @@ using UnityEngine;
 public abstract class Node
 {
 	protected NodeState _nodeState;
-
+	protected string name;
 	protected float utilityScore_; 
 
+	public string Name { get { return name; } }
 	public NodeState nodeState { get { return _nodeState; } }
 	public float UtilityScore
 	{

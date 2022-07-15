@@ -16,7 +16,7 @@ public class SharkAgent : agentAI
         SearchForFood searchforfood = new SearchForFood(agent, this, food);
 
         //Root
-        topNode = new UtilitySelector(new List<Node> { backtohideout, searchforfood});
+        topNode = new UtilitySelector(new List<Node> { backtohideout, searchforfood}, this);
     }
     public override void ConstructBlackBoard()
     {

@@ -12,6 +12,7 @@ public class SearchForFood : Node
 
     public SearchForFood(NavMeshAgent agent, agentAI ai,string foodtarget)
     {
+        name = "Search For Food";
         this.agent = agent;
         this.ai = ai;
         this.foodtarget = foodtarget;
@@ -20,6 +21,7 @@ public class SearchForFood : Node
     public override NodeState Evaluate()
     {
         //debug drawing
+        ai.currentNode = this;
         ai.SetColor(Color.red);
         float distance = 0.0f;
         GameObject temp = FindClosestFood(foodtarget);

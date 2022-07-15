@@ -5,14 +5,18 @@ using UnityEngine;
 public class UtilitySelector : Node
 {
     protected List<Node> nodes = new List<Node>();
-
-    public UtilitySelector(List<Node> nodes)
+  
+    private agentAI ai;
+    public UtilitySelector(List<Node> nodes, agentAI ai)
     {
+      //  name = "Utility Selector";
+        this.ai = ai;
         this.nodes = nodes;
     }
 
     public override NodeState Evaluate()
     {
+        ai.currentNode = this; 
         foreach (var node in nodes)
         {
             switch (node.Evaluate())
