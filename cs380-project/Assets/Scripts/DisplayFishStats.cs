@@ -16,7 +16,7 @@ public class DisplayFishStats : MonoBehaviour
 
     private List<string> keys;
 
-    private agentAI agent;
+    public agentAI agent;
 
     // Start is called before the first frame update
     void Start()
@@ -52,14 +52,15 @@ public class DisplayFishStats : MonoBehaviour
         // Because I always forget how this works 
         //https://docs.unity3d.com/ScriptReference/RaycastHit-point.html
         
-        if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
         {
             RaycastHit objectHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            
             if (Physics.Raycast(ray, out objectHit))
             {
-                agent = objectHit.transform.GetComponent<agentAI>();
+                if(objectHit.transform.GetComponent<agentAI>())
+                    agent = objectHit.transform.GetComponent<agentAI>();
 
                 if(agent != null)
                 {
@@ -77,7 +78,12 @@ public class DisplayFishStats : MonoBehaviour
                 + "Node's Utility Score: " 
                 + string.Format("{0:0.#}", agent.currentNode.UtilityScore);
         }
-
+        if (agent == null)
+        {
+            FishText.text = "Fish Selected: None";
+            utilityText.text = "Blackboard Value: ";
+            behaviorText.text = "Tree Node: ";
+        }
 
     }
 }

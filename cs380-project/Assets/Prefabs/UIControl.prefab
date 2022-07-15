@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4776565861116236699}
   - component: {fileID: 4776565861116236696}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UIControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,3 +50,4 @@ MonoBehaviour:
   FishText: {fileID: 0}
   nextButton: {fileID: 0}
   previousButton: {fileID: 0}
+  agent: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2828218296272106284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnvObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,10 @@ PrefabInstance:
     - target: {fileID: 1180342016979008, guid: 92e38535e8317804a957850b5e99d26f, type: 3}
       propertyPath: m_Name
       value: Coral_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180342016979008, guid: 92e38535e8317804a957850b5e99d26f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4334253358533232, guid: 92e38535e8317804a957850b5e99d26f, type: 3}
       propertyPath: m_RootOrder
@@ -123,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shell_04
       objectReference: {fileID: 0}
+    - target: {fileID: 1173133069666890, guid: db388351c9feef849abf6f5d8726ce7e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4609341232209536, guid: db388351c9feef849abf6f5d8726ce7e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -196,6 +204,10 @@ PrefabInstance:
     - target: {fileID: 1026551250251634, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
       propertyPath: m_Name
       value: Coral_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026551250251634, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4319723679310756, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
       propertyPath: m_RootOrder
@@ -271,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1026551250251634, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4319723679310756, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -344,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 1587923143289994, guid: 31148979ed045a446abeab0e313c70ea, type: 3}
       propertyPath: m_Name
       value: Anchor_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587923143289994, guid: 31148979ed045a446abeab0e313c70ea, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4319622732291282, guid: 31148979ed045a446abeab0e313c70ea, type: 3}
       propertyPath: m_RootOrder
@@ -419,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1026551250251634, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4319723679310756, guid: 700c296b7befd1a4b9053c51a679889b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -492,6 +516,10 @@ PrefabInstance:
     - target: {fileID: 1906287129859858, guid: 1ab43a6cb340fe048b3282a24f8cae53, type: 3}
       propertyPath: m_Name
       value: Coral_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906287129859858, guid: 1ab43a6cb340fe048b3282a24f8cae53, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4259980623657040, guid: 1ab43a6cb340fe048b3282a24f8cae53, type: 3}
       propertyPath: m_RootOrder
