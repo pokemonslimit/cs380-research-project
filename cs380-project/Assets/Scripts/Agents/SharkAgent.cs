@@ -7,13 +7,14 @@ using UnityEngine.AI;
 public class SharkAgent : agentAI
 {
     [SerializeField] GameObject hideout;
-    [SerializeField] float roamingRange;
+    [SerializeField] float chaseSpeed;
+    //float roamingRange;
     [SerializeField] string food;
     public override void ConstructBehahaviourTree()
     {
         // base.ConstructBehahaviourTree();
         BackHome backtohideout = new BackHome(hideout.transform, agent, this);
-        SearchForFood searchforfood = new SearchForFood(agent, this, food);
+        SearchForFood searchforfood = new SearchForFood(agent, this, food, chaseSpeed);
 
         //Root
         topNode = new UtilitySelector(new List<Node> { backtohideout, searchforfood}, this);

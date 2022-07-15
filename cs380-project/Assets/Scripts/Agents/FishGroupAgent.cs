@@ -9,13 +9,14 @@ public class FishGroupAgent : agentAI
     [SerializeField] GameObject predator;
     [SerializeField] float predatorDetectRange;
     [SerializeField] float roamingRange;
+    [SerializeField] float chasespeed;
     [SerializeField] string food;
     public override void ConstructBehahaviourTree()
     {
         //Leaf
         Idle idle = new Idle(agent, this);
         Roaming roaming = new Roaming(agent, this, roamingRange);
-        SearchForFood searchforfood = new SearchForFood(agent,this,food);
+        SearchForFood searchforfood = new SearchForFood(agent,this,food, chasespeed);
         FleeFromTarget fleefromtarger = new FleeFromTarget(predator.transform, agent, this, predatorDetectRange);
         //Root
         topNode = new UtilitySelector(new List<Node>{idle, roaming, searchforfood, fleefromtarger }, this);
