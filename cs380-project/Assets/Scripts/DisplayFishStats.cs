@@ -59,7 +59,8 @@ public class DisplayFishStats : MonoBehaviour
 
             if (Physics.Raycast(ray, out objectHit))
             {
-                agent = objectHit.transform.GetComponent<agentAI>();
+                if(objectHit.transform.GetComponent<agentAI>())
+                    agent = objectHit.transform.GetComponent<agentAI>();
 
                 if(agent != null)
                 {
