@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 852131714936586676}
   - component: {fileID: 560427672337658516}
   - component: {fileID: 4266500892967010118}
+  - component: {fileID: 9211480984370988663}
   m_Layer: 0
   m_Name: Shark_C1
   m_TagString: Untagged
@@ -98,6 +99,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9211480984370988663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369639734895093865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7797d9f607131d4ca16647406c53545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideout: {fileID: 4518992018749720320, guid: 289e68ccf3f76374baff2ce675deaede, type: 3}
+  chaseSpeed: 8
+  food: fish
 --- !u!1001 &332820908722059811
 PrefabInstance:
   m_ObjectHideFlags: 0

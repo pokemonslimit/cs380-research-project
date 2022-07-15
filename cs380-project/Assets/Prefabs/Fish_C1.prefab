@@ -112,7 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5c2988120b6424697f5c72a661d1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  predator: {fileID: 0}
+  predatorDetectRange: 10
   roamingRange: 500
+  chasespeed: 4
   food: seaweed
 --- !u!195 &2868863442318900276
 NavMeshAgent:

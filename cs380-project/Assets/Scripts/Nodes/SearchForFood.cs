@@ -9,13 +9,14 @@ public class SearchForFood : Node
     private NavMeshAgent agent;
     private agentAI ai;
     private string foodtarget;
-
-    public SearchForFood(NavMeshAgent agent, agentAI ai,string foodtarget)
+    private float chasespeed;
+    public SearchForFood(NavMeshAgent agent, agentAI ai,string foodtarget, float chasespeed)
     {
         name = "Search For Food";
         this.agent = agent;
         this.ai = ai;
         this.foodtarget = foodtarget;
+        this.chasespeed = chasespeed;
     }
 
     public override NodeState Evaluate()
@@ -41,6 +42,7 @@ public class SearchForFood : Node
         if(distance > 5.0f)
         {
             agent.isStopped = false;
+            agent.speed = chasespeed;
             //Debug.Log("finding food");
             agent.SetDestination(target.position);
             return NodeState.RUNNING;

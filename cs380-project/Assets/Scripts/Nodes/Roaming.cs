@@ -8,12 +8,14 @@ public class Roaming : Node
     private NavMeshAgent agent;
     private agentAI ai;
     private float range;
+    private int count;
     public Roaming(NavMeshAgent agent, agentAI ai,float range)
     {
         name = "Roaming";
         this.agent = agent;
         this.ai = ai;
         this.range = range;
+        this.count = 0;
     }
 
     public override NodeState Evaluate()
@@ -26,12 +28,12 @@ public class Roaming : Node
         {
             agent.isStopped = false;
             agent.SetDestination(RandomLocation(range));
+            count += 1;
             return NodeState.RUNNING;
         }
         else
         {
             agent.isStopped = true;
-            ai.utilityBlackboard["Mood"] -= 0.1f;
             return NodeState.SUCCESS;
         }
     }
@@ -51,5 +53,11 @@ public class Roaming : Node
     {
         float x = ai.utilityBlackboard["Mood"];
         UtilityScore = x / 100.0f;
+        if (count >= 10000)
+        {
+            ai.utilityBlackboard["Mood"] = 0;
+            UtilityScore = x / 100.0f;
+            count = 0;
+        }
     }
 }
