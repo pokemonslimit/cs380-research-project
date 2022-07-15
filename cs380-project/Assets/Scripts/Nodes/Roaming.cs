@@ -53,7 +53,7 @@ public class Roaming : Node
     {
         float x = ai.utilityBlackboard["Mood"];
         UtilityScore = x / 100.0f;
-        if (count >= 1000)
+        if (count >= 10000)
         {
             ai.utilityBlackboard["Mood"] = 0;
             UtilityScore = x / 100.0f;
